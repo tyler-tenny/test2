@@ -1,4 +1,5 @@
 #include "tree.h"
+#include "tree.cpp"
 #include "node.h"
 #include <iostream>
 
@@ -8,11 +9,12 @@ void print(T value)
     std::cout << "Value: " << value << std::endl;
 }
 
-template <typename T>
+template class tree<int>;
+
 int main()
 {
     std::cout << "tree binary test\n";
-    tree<T> t;
+    tree<int> t;
     int values[20];
 
     for (int ii = 0; ii < 20; ii++)

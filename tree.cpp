@@ -4,13 +4,14 @@
 template <typename T>
 tree<T>::tree() {
 	mValue = nullptr;
-	tree = nullptr;
-	tree = nullptr;
+	mLeft = nullptr;
+	mRight = nullptr;
 }
 
 template <typename T>
 tree<T>::~tree() {
-	destroyTree(this);
+  tree* cur{this};
+	destroyTree(cur);
 }
 
 template <typename T>
@@ -98,7 +99,16 @@ bool tree<T>::Contains(T& value) {
 template <typename T>
 bool tree<T>::Contains(tree<T>*& root, T& value) {
 	bool result{ false };
-	if (root)[
-		if (root->mValue->Value() == )
-	]
+	if (root) {
+		if (root->mValue->Value() == value ) {
+      result = true;
+  }
+    else if (root->mValue->Value() < value) {
+      result = Contains(mRight, value);
+    }
+    else if (root->mValue->Value() > value) {
+      result = Contains(mLeft, value);
+    }
+  }
+return result;
 }
